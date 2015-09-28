@@ -18,7 +18,7 @@ public class MessageQueue {
 	}
 
 	private MessageQueue() {
-
+		// NO-OP
 	}
 
 	public ArrayBlockingQueue<Message> getMessageQueue() {

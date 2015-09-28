@@ -9,13 +9,11 @@ public class MainTest {
 	public static final void main(String[] args) {
 
 		MessageLooper.getInstance().start();
-		MessageLooper.getInstance().setOnMessageHandleListener(new OnMessageHandleListener() {
+		MessageLooper.getInstance().addOnMessageHandleListener(new OnMessageHandleListener() {
 
 			@Override
 			public void onMesageHandle(Message msg) {
-
 				System.out.println(msg.getCommand());
-
 			}
 		});
 
