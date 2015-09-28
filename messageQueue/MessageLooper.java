@@ -1,4 +1,4 @@
-package messageQueue;
+package com.robot.messageQueue;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ public class MessageLooper extends Thread {
 
 	private static int STOP_LOOP = -100;
 
-	private boolean mFlag = true;
+	private boolean mFlag = false;
 
 	private MessageLooper() {
 		// NO-OP
@@ -25,6 +25,7 @@ public class MessageLooper extends Thread {
 
 	@Override
 	public void run() {
+		mFlag = true;
 		while (mFlag) {
 			try {
 				Message msg = MessageQueue.getInstance().getMessageQueue().take();
@@ -50,7 +51,9 @@ public class MessageLooper extends Thread {
 	}
 
 	public void loop() {
-		mFlag = true;
+		if(mFlag){
+			return;
+		}
 		getInstance().start();
 	}
 

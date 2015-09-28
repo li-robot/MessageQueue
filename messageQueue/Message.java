@@ -1,4 +1,4 @@
-package messageQueue;
+package com.robot.messageQueue;
 
 public interface Message {
 	
