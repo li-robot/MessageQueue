@@ -43,6 +43,7 @@ public class MessageLooper extends Thread {
 				if (msg.getCommand() == STOP_LOOP) {
 					mFlag = false;
 					mOnMessageHandleListenerList.clear();
+					mMsgLooper = null;
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
